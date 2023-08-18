@@ -51,6 +51,69 @@ app.get("/", (req, res) => {
 
 
 
+app.get("/", (req, res) => {
+
+  res.render("home")
+
+});
+
+
+app.get("/login", (req, res) => {
+
+  res.render("login")
+
+});
+
+
+
+app.get("/wall", (req, res) => {
+
+  res.render("wall")
+
+});
+
+
+
+app.get("/courses", (req, res) => {
+
+  res.render("courses")
+
+});
+
+
+
+app.get("/lessons", (req, res) => {
+
+  res.render("lessons")
+
+});
+
+
+
+app.get("/subscribe", (req, res) => {
+
+  res.render("subscribe")
+
+});
+
+
+app.get("/study", (req, res) => {
+
+  res.render("study")
+
+});
+
+
+
+app.get("/quiz", (req, res) => {
+
+  res.render("quiz")
+
+});
+
+
+
+
 
 
 
