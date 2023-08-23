@@ -1,0 +1,100 @@
+
+<style media="screen">
+  .header-area {
+    background-color: #7a6ad8 !important;
+    border-radius: 0px 0px 25px 25px;
+    height: 80px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
+  }
+
+
+
+  .header-area nav {
+    margin-top: 1rem;
+  }
+
+.search-input {
+margin-left:6rem;
+}
+
+/* Style for the dropdown */
+  .dropdown select {
+    background-color: #7a6ad8;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 0rem;
+    cursor: pointer;
+  }
+
+  /* Adjust the appearance of the dropdown arrow */
+  .dropdown select::-ms-expand {
+    display: none;
+  }
+
+  /* Add hover effect to the dropdown */
+  .dropdown select:hover {
+    color: #fff;
+  }
+
+
+  .nav option{
+    margin:5rem;
+  }
+
+
+</style>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ***** Logo Start ***** -->
+          <a href="index.html" class="logo">
+            <h1>Scholar</h1>
+          </a>
+          <!-- ***** Logo End ***** -->
+          <!-- ***** Serach Start ***** -->
+          <div class="search-input">
+            <form id="search" action="#">
+              <input type="text" placeholder="Search Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+              <i class="fa fa-search"></i>
+            </form>
+          </div>
+          <!-- ***** Serach Start ***** -->
+          <!-- ***** Menu Start ***** -->
+          <ul class="nav">
+            <li class="scroll-to-section"><a href="#top" class="active">Teach in</a></li>
+            <li class="scroll-to-section"><a href="#services">My Learning</a></li>
+            <li class="scroll-to-section"><a href="#team">My Card</a></li>
+            <li class="dropdown"> <!-- Add a class to the list item for the dropdown -->
+               <select>
+                 <option value="" disabled selected>Tools</option>
+                 <option value="item1">My Learning</option>
+                 <option value="item2">My Card</option>
+                 <hr>
+                 <option value="item2">Account Setting</option>
+                 <option value="item2">Payment Methods</option>
+                 <option value="item2">Edite Profile</option>
+                 <option value="item2">Contact us</option>
+                 <option value="item2">Customer Support</option>
+                 <option value="item2">Log Out</option>
+               </select>
+             </li>
+          </ul>
+          <a class='menu-trigger'>
+            <span>Menu</span>
+          </a>
+          <!-- ***** Menu End ***** -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
