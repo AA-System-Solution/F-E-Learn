@@ -1,32 +1,36 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const ejs = require("ejs");
-const mongoose = require('mongoose');
-const fs = require('fs');
-const fileUpload = require('express-fileupload');
-const path = require("path");
-
+const {
+  express,
+  bodyParser,
+  ejs,
+  mongoose,
+  session,
+  passport,
+  passportLocalMongoose,
+  findOrCreate,
+  fs,
+  fileUpload,
+  path,
+  useragent,
+  get_route,
+  post_route
+} = require('./requires');
 const data = require('../data-schema.js');
 
 
+// ... (your application setup)
+
+// --                            -------      access files Ejs / static files      ------------
 const app = express();
-
 app.set('view engine', 'ejs');
-
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
 app.use(express.static("public"));
-
 app.use('/uploads', express.static('uploads'));
-
-
+app.use(useragent.express());
 app.use(fileUpload({
   safeFileNames: true
 }));
-
-
 app.use(function(req, res, next) {
   res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.header('Pragma', 'no-cache');
@@ -35,88 +39,31 @@ app.use(function(req, res, next) {
 });
 
 
+// -----------------------------      sessiion setup ---------------------------------
+
+app.use(session({
+  secret: "creatingE-learn-webApp",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1800000 // 30 minutes
+  }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+// --------------                             Data Base connection and plugin   ------------
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/fede7a').then(() => {
+mongoose.connect('mongodb://127.0.0.1:27017/wayUp').then(() => {
   console.log("connected to database");
 });
+// -- USER DB encryptedd  by session and passport
 
 
 
-app.get("/", (req, res) => {
-
-  res.render("home")
-
-});
-
-
-
-app.get("/", (req, res) => {
-
-  res.render("home")
-
-});
-
-
-app.get("/login", (req, res) => {
-
-  res.render("login")
-
-});
-
-
-
-app.get("/wall", (req, res) => {
-
-  res.render("wall")
-
-});
-
-
-
-app.get("/courses", (req, res) => {
-
-  res.render("courses")
-
-});
-
-
-
-app.get("/lessons", (req, res) => {
-
-  res.render("lessons")
-
-});
-
-
-
-app.get("/subscribe", (req, res) => {
-
-  res.render("subscribe")
-
-});
-
-
-app.get("/study", (req, res) => {
-
-  res.render("study")
-
-});
-
-
-
-app.get("/quiz", (req, res) => {
-
-  res.render("quiz")
-
-});
-
-
-
-
-
-
-
+app.use(get_route);
+app.use(post_route);
 
 
 

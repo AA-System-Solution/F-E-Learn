@@ -8,7 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
-  <title>Elearn</title>
+  <title>Way-Up</title>
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
   <!-- Bootstrap core CSS -->
 
@@ -23,61 +24,65 @@
 
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+
+        <form action="/login" class="sign-in-form" method="post">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <i class="fas fa-envelope"></i>
+            <input type="text" placeholder="Email" name="username" required/>
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" name="password" required />
           </div>
           <input type="submit" value="Login" class="btn solid" />
+<!--
           <p class="social-text">Or Sign in with social platforms</p>
           <div class="social-media">
             <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-
-            <a href="#" class="social-icon">
               <i class="fab fa-google"></i>
             </a>
-
           </div>
+
+        -->
         </form>
-        <form action="#" class="sign-up-form">
+
+
+        <form action="/register" class="sign-up-form" method="post">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="username" placeholder="Email" required/>
           </div>
           <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <i class="fas fa-user"></i>
+            <input type="text" name="full_name" placeholder="Full Name" required/>
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" name="password" placeholder="Password" required />
           </div>
           <div class="input-field">
             <i class="fas fa-phone"></i>
-            <input type="number" placeholder="Phone Number" />
+            <input type="number" name="stud_number" placeholder="Phone Number" required />
           </div>
           <div class="input-field">
             <i class="fas fa-phone"></i>
-            <input type="number" placeholder="Parents Phone Number" />
+            <input type="number" name="parent_number" placeholder="Parents Phone Number" />
           </div>
-          <div class="dropdown">
-            <select>
-              <option value="" disabled selected>Gender</option>
-              <option value="item1">Male</option>
-              <option value="item2">Female</option>
+          <div class="ropdown">
+            <input type="text" id="genderInput" name="gender" placeholder="Gender" readonly required>
+            <select id="genderSelect">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
           </div>
+
           <input type="submit" class="btn" value="Sign up" />
 
         </form>
+
+
       </div>
     </div>
 
