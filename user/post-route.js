@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require("passport");
-const User = require('./user-schema.js'); // Adjust the path as needed
+const User = require('./user-schema.js');
 const data = require('../data-schema.js');
 
 // Register route

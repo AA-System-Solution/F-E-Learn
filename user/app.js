@@ -61,6 +61,14 @@ mongoose.connect('mongodb://127.0.0.1:27017/wayUp').then(() => {
 // -- USER DB encryptedd  by session and passport
 
 
+// Define a custom middleware function to log request information
+app.use((req, res, next) => {
+  console.log(`Received ${req.method} request for ${req.url}`);
+  next();                                                                 // Call next() to pass control to the next middleware or route handler
+});
+
+
+
 
 app.use(get_route);
 app.use(post_route);
