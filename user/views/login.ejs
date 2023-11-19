@@ -71,11 +71,11 @@
             <input type="number" name="parent_number" placeholder="Parents Phone Number" />
           </div>
           <div class="ropdown">
-            <input type="text" id="genderInput" name="gender" placeholder="Gender" readonly required>
-            <select id="genderSelect">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
+            <input list="genderType" class="form-control" name="reportType" id="gender_Type" placeholder="Choose your Gender "  autocomplete="off">
+            <datalist id="genderType">
+              <option value="male">Male</option>
+              <option value="female">female</option>
+            </datalist>
           </div>
 
           <input type="submit" class="btn" value="Sign up" />
@@ -91,8 +91,9 @@
         <div class="content">
           <h3>New here ?</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-            ex ratione. Aliquid!
+            "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
+            - Malcolm X
+
           </p>
           <button class="btn transparent" id="sign-up-btn">
             Sign up
@@ -104,8 +105,8 @@
         <div class="content">
           <h3>One of us ?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laboriosam ad deleniti.
+            Welcome to our e-learning community! take your journey of knowledge and discovery.
+
           </p>
           <button class="btn transparent" id="sign-in-btn">
             Sign in
